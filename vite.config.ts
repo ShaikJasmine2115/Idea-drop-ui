@@ -11,11 +11,11 @@ const config = defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        // Frontend calls /api/ideas → Express serves /api/ideas on :5000
+        target: 'http://localhost:5000',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
+      },
+    },
   },
   plugins: [
     devtools(),

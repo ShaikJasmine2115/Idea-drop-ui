@@ -31,7 +31,7 @@ function NewIdeaPage() {
       return;
     }
     try{
-      await mutateAsync({title, summary, body: description, tags: tags.split(',').map(tag => tag.trim()).filter(tag => tag !== '')})
+      await mutateAsync({title, summary, description, tags: tags.split(',').map(tag => tag.trim()).filter(tag => tag !== '')})
     } catch (error) {
       alert('Failed to create idea')
       }
